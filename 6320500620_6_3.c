@@ -4,24 +4,21 @@
 
 void main()
 {
-    long long int n,q,i,j,k,get[2],A,B,Ptime=0,max;
+    long long int n,q,i,j,k,get[2],A,B,Ptime=0,max,test;
     for(i=0; i<2 ;i++)
     {
         scanf("%lli",&get[i]);
     }
     n=get[0];
     q=get[1];
-
-    printf("n=%lli q=%lli\n",Command,n,q);
-
     char Command,getc;
-
     long long int Array[n],ans[q];
-
     for(j=0 ; j<n ; j++)
     {
-        Array[n]=0;
+        Array[j]=0;
+        ans[j]=0;
     }
+
 
 
     k=0;
@@ -38,28 +35,34 @@ void main()
         Command=getc;
         A=get[0];
         B=get[1];
-        printf("Com=%c A=%lli B=%lli\n",Command,A,B);
 
         if(Command=='U')
         {
-            Array[A]=B;
+            Array[A-1]=B;
+            //printf("now Array = ");///////////////////
+            //for(test=0 ; test<n ; test++)
+            //    printf("%lli ",Array[test]);///////////////////
         }
+
         else if(Command=='P')
         {
             max=Array[A-1];
-            for(i=A-1 ; i<B ; i++)
+            for(i=A-1 ; i<=B-1 ; i++)
             {
                 if(Array[i]>max)
                 {
+                    //printf("max =%lli\n",max);///////////////////
                     max=Array[i];
+                    //printf("array[i] =%lli\n",max);//////////////
                 }
             }
             ans[k]=max;
             k++;
             Ptime++;
         }
-
     }
+
+
 
     for(i=0 ; i<Ptime ; i++)
     {
