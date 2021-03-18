@@ -18,6 +18,7 @@ void main()
         for(j=0 ; j<2 ; j++)
         {
             scanf("%d",&vote[i][j]);
+            vote[i][j]=vote[i][j]-1;
         }
     }
     for(i=0 ; i<n ; i++)
@@ -27,9 +28,10 @@ void main()
             score[vote[i][j]]++;
         }
     }
+
     int max=score[0];
     int min=score[0];
-    int whomin=0,whomax=0,rightmin=0;
+    int whomin=0,whomax=0,rightmin=0,temp=0;
 
     while(!rightmin)
     {
@@ -40,12 +42,26 @@ void main()
                 max=score[i];
                 whomax=i;
             }
-            else if(score[i]<min)
+
+            if(temp>0)
             {
-                min=score[i];
-                whomin=i;
+                if(score[i]<min && score[i]>score[whomin] )
+                {
+                    min=score[i];
+                    whomin=i;
+                }
             }
+            else
+            {
+                if(score[i]<min)
+                {
+                    min=score[i];
+                    whomin=i;
+                }
+            }
+
         }
+        temp++;
 
         if(vote[whomax][0]==whomin || vote[whomax][1]==whomin)
         {
@@ -53,11 +69,7 @@ void main()
             break;
         }
 
-
     }
-    printf("%d %d",whomax,whomin);
-
-
-
+    printf("%d %d",whomax+1,whomin+1);
 
 }
