@@ -7,7 +7,7 @@ void main()
 
     int n,i,j,k;
     scanf("%d",&n);
-    char word[n][50000],wordsave[50000];
+    char word[n][1000],wordsave[1000];
     for(i=0; i<n ; i++)
     {
         fflush(stdin);
