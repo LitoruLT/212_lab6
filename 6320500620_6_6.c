@@ -16,14 +16,38 @@ void main()
     {
         for(j=0 ; j<n ; j++)
         {
-            for(k=0 ; command[k]!='\0' ; k++)
+            k=0;
+            while(i==posi && j==posj && command[k]!='\0' )
             {
                 switch(command[k])
                 {
                 case 'D':
+                    posi++;break;
+                case 'R':
+                    posj++;break;
+                case 'L':
+                    posj--;break;
+                case 'U':
+                    posi--;break;
+                }
+                if( i!=posi && j!=posj )
+                {
+                    if(i<posi || i>posi)
+                    {
+                        printf("|");;break;
+                    }
+                    if(j<posj || j>posj)
+                    {
+                        printf("-");;break;
+                    }
 
                 }
+                k++;
             }
+            printf(".");
         }
+        printf("\n");
+
+
     }
 }
