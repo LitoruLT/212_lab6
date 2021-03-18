@@ -68,6 +68,12 @@ void main()
             rightmin=1;
             break;
         }
+        if(temp>n)
+        {
+            whomin=-1;
+            break;
+        }
+
 
     }
     printf("%d %d",whomax+1,whomin+1);
