@@ -10,7 +10,8 @@ void main()
     char word[n][50000],wordsave[50000];
     for(i=0; i<n ; i++)
     {
-        scanf("%s",&word[i]);
+        fflush(stdin);
+        scanf("%[^\n]c",&word[i]);
     }
 
     for(i=0; i<n ; i++)
