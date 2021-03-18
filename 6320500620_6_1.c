@@ -7,11 +7,10 @@ void main()
 
     int n,i,j,k;
     scanf("%d",&n);
-    char word[n][1100],wordsave[1100];
+    char word[n][11000],wordsave[11000];
     for(i=0; i<n ; i++)
     {
-        fflush(stdin);
-        scanf("%[^\n]c",&word[i]);
+        scanf("%s",word[i]);
     }
 
     for(i=0; i<n ; i++)
@@ -34,8 +33,7 @@ void main()
 
     for(i=0; i<n ; i++)
     {
-        printf("%s\n",&word[i]);
-
+        printf("%s\n",word[i]);
     }
 
 }
